@@ -1,0 +1,14 @@
+﻿body{
+	background-image: url('../images/background_img.jpg');
+}
+
+img{
+	height: 80px;
+	width: 70px;
+}
+
+#red, #blue, #green, #yellow{
+	margin: 0px;
+	margin-left: 5px;
+	padding: 0px;
+}
