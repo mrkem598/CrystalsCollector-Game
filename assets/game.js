@@ -1,7 +1,5 @@
-
 var wins = 0;
 var losses = 0;
-
 var score = 0;
 var winningNumber = Math.floor((Math.random() * 100) + 1);
 var red = Math.floor((Math.random() * 10) + 1);
@@ -9,12 +7,7 @@ var blue = Math.floor((Math.random() * 10) + 1);
 var yellow = Math.floor((Math.random() * 10) + 1);
 var green = Math.floor((Math.random() * 10) + 1);
 // console.log(red, blue, yellow, green);
-
-
-var updateScore = function (){
-	$('#score').empty();
-	$('#score').append(score);
-	$('#wins').empty();
+pty();
 	$('#wins').append(wins);
 	$('#losses').empty();
 	$('#losses').append(losses);
