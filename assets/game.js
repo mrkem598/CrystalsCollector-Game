@@ -63,8 +63,4 @@ function newGame() {
 			  losses ++;
 			  $("#crystals").empty();
 			newGame();
-		}
-	
-	});
-}
-});
+		});
