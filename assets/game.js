@@ -1,79 +1,70 @@
+$(document).ready(function() {
+var crystals = [
+	'assets/images/red.png',
+	'assets/images/blue.png',
+	'assets/images/yellow.png',
+	'assets/images/green.png'
+	];
+
 var wins = 0;
 var losses = 0;
 var score = 0;
-var winningNumber = Math.floor((Math.random() * 100) + 1);
-var red = Math.floor((Math.random() * 10) + 1);
-var blue = Math.floor((Math.random() * 10) + 1);
-var yellow = Math.floor((Math.random() * 10) + 1);
-var green = Math.floor((Math.random() * 10) + 1);
-// console.log(red, blue, yellow, green);
-pty();
-	$('#wins').append(wins);
-	$('#losses').empty();
-	$('#losses').append(losses);
-	// $('#score').replaceAll(score); jquery error?
-}
 
-var restart = function (){
-
-	score = 0;
-	winningNumber = Math.floor((Math.random() * 100) + 1);
-
-	$("#randomNumber").empty();
-	$("#randomNumber").append(winningNumber);
-
-	red = Math.floor((Math.random() * 10) + 1);
-	blue = Math.floor((Math.random() * 10) + 1);
-	yellow = Math.floor((Math.random() * 10) + 1);
-	green = Math.floor((Math.random() * 10) + 1);
-	console.log(red, blue, yellow, green, winningNumber);
-	alert('restart function ran');
-	updateScore();
-}
-
-var logic = function (){
-		
-	if (score == winningNumber) {
-			wins = wins + 1; //++ not working?
-			alert('You Win!');
-			restart();
-			}			
-		else if (score > winningNumber) {
-			losses = losses + 1;
-			alert('You Lost!');
-			restart();
+newCrystals();
+newGame();
+	//creating a function for newCrystals
+	function newCrystals () {
+		var numbers = []
+		while(numbers.length < 4) {
+		//Math.ceil round a number upward to its nearest integer
+			var winningNumber = Math.ceil(Math.random()* 12);
+			var found = false;
+			for (var i=0; i< numbers.length ; i++){
+				if(numbers[i] === winningNumber) {
+					found = true; break
+				}
 			}
-		else {
-			updateScore();
-			}
+			if(!found)numbers[numbers.length]=winningNumber;
+		}
+		console.log(numbers);
+	for(i=0; i < numbers.length; i++) {
+	 var imageCrystal = $('<img>');
+	 //The attr() method sets or returns attributes and values of the imageCrystal
+	imageCrystal.attr('data-num', numbers[i]);
+	imageCrystal.attr('src', crystals[i]);
+	imageCrystal.attr('alt', 'crystals');
+	imageCrystal.addClass('crystalImage');
+	$("#crystals").append('imageCrystal');
+	}
+	}
+function newGame() {
+	var score = 0;
+	$("#yourScore").text(score);
+	
+	function randomIntFromInterval(min,max) {
+		return Math.floor(Math.random()*(max-min)+1);
+	}
+	var numberToGuess = randomIntFromInterval(19,120);
+	$(".value").text(numberToGuess);
+	
+	$(".crystalImage").on("click", function() {
+		counter = counter + parseInt($(this).data("num"));
+		$("#yourScore").text((counter);
+		if(counter === numberToGuess) {
+			$("#status").text("You Win!");
+			wins ++:
+			$("#win").text(wins);
+			console.log(wins);
+			$("#crystals").empty();
+			newCrystals();
+			newGame();
+		}else if (score > numberToGuess){
+			$("#status).text("You Lost!");
+			  losses ++;
+			  $("#crystals").empty();
+			newGame();
+		}
+	
+	});
 }
-
-$("#randomNumber").append(winningNumber);
-
-
-$("#score").append(score);
-
-
-
-$(document).ready(function(){
-
-$('#red').click(function(){
-			score = score + red;
-			logic();
-		})
-
-$('#blue').click(function(){
-			score = score + blue;
-			logic();	
-		})
-
-$('#yellow').click(function(){
-			score = score + yellow;
-			logic();
-		})
-
-$('#green').click(function(){
-			score = score + green;
-			logic();
-	})
 });
