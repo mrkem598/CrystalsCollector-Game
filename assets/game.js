@@ -65,4 +65,7 @@ function newGame() {
 			  $("#crystals").empty();
 			newCrystals();
 			newGame();
+		}
 		});
+}
+});
