@@ -61,6 +61,8 @@ function newGame() {
 		}else if (score > numberToGuess){
 			$("#status).text("You Lost!");
 			  losses ++;
+			  console.log(losses);
 			  $("#crystals").empty();
+			newCrystals();
 			newGame();
 		});
