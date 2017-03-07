@@ -1,5 +1,5 @@
 ## Welcome to GitHub Pages
-
+<img src="https://cloud.githubusercontent.com/assets/23619819/23648272/f15d08e4-02e7-11e7-923c-99c8b99a78d0.PNG" width="90%"></img> 
 You can use the [editor on GitHub](https://github.com/mrkem598/CrystalsCollector-Game/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
