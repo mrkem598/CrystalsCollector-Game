@@ -91,3 +91,13 @@ h1{
 	padding: 20px;
 	border: solid 1px #ddd
 }
+@media screen and (max-width: 769px){
+	body{
+		background: white;
+		.white_background{
+			width: auto;
+			height: auto;
+			margin: 1px;
+			padding: 10px;
+		}
+	}
