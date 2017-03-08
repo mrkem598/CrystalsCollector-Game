@@ -91,7 +91,8 @@ h1{
 	padding: 20px;
 	border: solid 1px #ddd
 }
-@media screen and (max-width: 769px){
+/*Targeting Tablets and desktop*/
+@media only screen and (min-width: 768px){
 	body{
 		background: white;
 		.white_background{
@@ -101,3 +102,27 @@ h1{
 			padding: 10px;
 		}
 	}
+/*Targetting phones */
+@media only screen and (max-width: 767px){
+	body{
+		background: white;
+		.white_background{
+			width: auto;
+			height: auto;
+			margin: 1px;
+			padding: 10px;
+	}
+	}
+/*portraint phones*/
+@media only screen(max-width: 767px) and (orientation: portrait){
+	body{
+		background: white;
+		.white_background{
+			width: auto;
+			height: auto;
+			margin: 1px;
+			padding: 10px;
+	}
+	}
+	
+	
