@@ -94,19 +94,17 @@ h1{
 /*Targeting Tablets and desktop*/
 @media only screen and (min-width: 768px){
 	body{
-		background: white;
-		.white_background{
+		background-image:url("../images/background.jpg");
 			width: auto;
 			height: auto;
 			margin: 1px;
 			padding: 10px;
 		}
-	}
+	
 /*Targetting phones */
 @media only screen and (max-width: 767px){
 	body{
-		background: white;
-		.white_background{
+		background-image: url("../images/background.jpg");
 			width: auto;
 			height: auto;
 			margin: 1px;
@@ -116,13 +114,12 @@ h1{
 /*portraint phones*/
 @media only screen(max-width: 767px) and (orientation: portrait){
 	body{
-		background: white;
-		.white_background{
+		background-image: url("../images/background.jpg");
 			width: auto;
 			height: auto;
 			margin: 1px;
 			padding: 10px;
-	}
+	
 	}
 	
 	
